@@ -8,13 +8,13 @@ module.exports = {
             heroes: heroes});
     },
     detail: (req,res) => {
-        let heroe = heroes.find(heroe => heroe.id === Number(req.params.id) );
-	
-        if (heroe === undefined) {
-            res.send("Heroe no encontrado");
-        } else {
-            res.send(`Hola, mi nombre es ${heroe.nombre} y soy ${heroe.profesion}`);
-        }
+        let heroe = heroes.find(heroe => heroe.id === Number(req.params.id) );	
+        
+        res.render('heroes-detail', {
+            title: 'Digital Heroes',
+            text: "Heroe no encontrado",
+            heroe: heroe
+        });
     },
     biography: (req,res) => {
         let heroe = heroes.find(heroe => heroe.id === Number(req.params.id) );

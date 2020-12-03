@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (heroe === undefined) { %>
+        <h2><%= textNotFound %></h2>
+    <% } else if ( status === 'ok') { %>
+        <h2>Heroe: <%= heroe.nombre %> </h2> 
+        <h3>Reseña: <%= heroe.resenia %></h3>
+    <% } else { %>
+        <h2><%= heroe.nombre %> dice: Lamento que no quieras saber más de mí :( </h2> 
+    <% } %>
+  </body>
+</html>

@@ -17,15 +17,15 @@ module.exports = {
         });
     },
     biography: (req,res) => {
+        let status = req.params.ok;
         let heroe = heroes.find(heroe => heroe.id === Number(req.params.id) );
-
-        if (heroe === undefined) {
-            res.send("No encontramos un héroe para mostrarte su biografía");
-        } else if (req.params.ok === 'ok'){
-            res.send(`Heroe: ${heroe.nombre} <br> Reseña: ${heroe.resenia}`);
-        } else {
-            res.send(`${heroe.nombre} dice: Lamento que no quieras saber más de mí :(`);
-        }
+        
+        res.render('heroes-bio', {
+            title: 'Digital Heroes',
+            textNotFound: "No encontramos un héroe para mostrarte su biografía",
+            status: status,
+            heroe: heroe
+        });
     }
 }
 

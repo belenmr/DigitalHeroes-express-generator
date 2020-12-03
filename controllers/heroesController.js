@@ -3,7 +3,9 @@ const heroes = JSON.parse(fs.readFileSync('./data/heroes.json', 'utf-8'));
 
 module.exports = {
     showHeroes: (req, res) => {
-        res.send(heroes);
+        res.render('heroes', {
+            title: 'Digital Heroes',
+            heroes: heroes});
     },
     detail: (req,res) => {
         let heroe = heroes.find(heroe => heroe.id === Number(req.params.id) );

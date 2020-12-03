@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% heroes.forEach ( heroe => {%>
+    <ul>
+        <li>ID: <%= heroe.id %></li>
+        <li>Nombre: <%= heroe.nombre %></li>
+        <li>Profesion: <%= heroe.profesion %></li>
+        <li>Pais: <%= heroe.pais %></li>
+        <li>Reseña: <%= heroe.resenia %></li>
+    </ul>
+    <% }) %>
+  </body>
+</html>
